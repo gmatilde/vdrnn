@@ -16,7 +16,7 @@ parser.add_argument('--model_folder', type=str, help='name folder where model is
 args=parser.parse_args()
 
 #path to project
-PATH = '/home/matilde/Documents/vdrnn/'
+PATH = '../'
 
 data_path = os.path.join(PATH, 'surrogate_data')
 

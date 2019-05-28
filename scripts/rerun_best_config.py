@@ -11,7 +11,6 @@ This script re-run with a given dataset the best configuration found by BOHB for
 
 parser = argparse.ArgumentParser(description='''re-run for a given budget the best configuration (incumbent) found by BOHB with a given dataset.''')
 
-parser.add_argument('--folder', type=str, help='name of the folder with the results', default='./')
 parser.add_argument('--budget', type=float, help='time budget in minutes', default=10)
 parser.add_argument('--dataset', type=str, help='dataset to be used for training', default='mnist')
 parser.add_argument('--model_folder', type=str, help='name folder where the model is saved', default='model')
@@ -19,7 +18,7 @@ parser.add_argument('--model_folder', type=str, help='name folder where the mode
 args=parser.parse_args()
 
 # load the example run from the log files
-result = hpres.logged_results_to_HBS_result(args.folder)
+result = hpres.logged_results_to_HBS_result('../bohb')
 
 # get all executed runs
 all_runs = result.get_all_runs()
@@ -46,7 +45,7 @@ if args.dataset not in available_datasets:
     raise Exception('{} is not available. Please choose among the available datasets {}'.format(args.dataset, available_datasets))
 
 #extract the data
-PATH = '/home/matilde/Documents/vdrnn/'
+PATH = '../'
 
 #data to be used: convnet_cifar10
 with open(os.path.join(PATH, 'surrogate_data', '%s.json'%args.dataset),'r') as f:
