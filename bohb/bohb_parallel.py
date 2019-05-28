@@ -27,7 +27,7 @@ args=parser.parse_args()
 host = hpns.nic_name_to_host(args.nic_name)
 
 if args.worker:
-	w = worker('mnist.json', path='/home/matilde/Documents/vdrnn/surrogate_data', run_id=args.run_id, host=host)
+	w = worker('mnist.json', path='../surrogate_data', run_id=args.run_id, host=host)
 	w.load_nameserver_credentials(working_directory=args.shared_directory)
 	w.run(background=False)
 	exit(0)
@@ -39,7 +39,7 @@ NS = hpns.NameServer(run_id=args.run_id, host=host, port=0, working_directory=ar
 ns_host, ns_port = NS.start()
 
 # Start local worker
-w = worker('mnist.json', path='/home/matilde/Documents/vdrnn/surrogate_data', run_id=args.run_id, host=host, nameserver=ns_host, nameserver_port=ns_port)
+w = worker('mnist.json', path='../surrogate_data', run_id=args.run_id, host=host, nameserver=ns_host, nameserver_port=ns_port)
 w.run(background=True)
 
 # Run an optimizer

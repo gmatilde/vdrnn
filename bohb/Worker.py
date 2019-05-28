@@ -95,7 +95,7 @@ class VRNN_worker(Worker):
 
 if __name__ == '__main__':
 
-	worker = VRNN_worker('mnist.json', path='/home/matilde/Documents/vdrnn/surrogate_data', run_id='test')
+	worker = VRNN_worker('mnist.json', path='../surrogate_data', run_id='test')
 	configspace = worker.get_configspace()
 
 	while(True):
