@@ -1,0 +1,1 @@
+{"act": "relu", "batch_size": 22, "hs": [6, 6], "mlp": [103], "mlp_config": [115], "prob": 0.9621109716515621, "lr": 0.027071799803423356, "scheduler": "cos", "n_samples": 128, "budget": 600.0, "momentum": 0.9404668000666359, "final_lr": 2.0726736382312747e-05, "max_cutting_length": 5, "curriculum_learning": "linear"}
